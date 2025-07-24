@@ -25,7 +25,7 @@ def plot_wav(wav, sample_rate=22050, end=None, ax=None):
     for sec in range(0, len(wav), sample_rate):
         ax.axvline(sec, color="grey")
     if show_needed:
-        fig.show()
+        plt.show()
 
 
 def plot_windowed_wav(windows):
@@ -38,7 +38,7 @@ def plot_windowed_wav(windows):
     ax.set_xlabel("Window index")
     ax.set_ylabel("Samples")
 
-    fig.show()
+    plt.show()
 
 def plot_dft(spec):
     fig, ax = plt.subplots(figsize=(10, 5))
@@ -49,7 +49,7 @@ def plot_dft(spec):
     ax.set_xlabel("Window index")
     ax.set_ylabel("Frequencies")
 
-    fig.show()
+    plt.show()
 
 
 def plot_hann_window(window_size=1024, ax=None):
@@ -65,7 +65,7 @@ def plot_hann_window(window_size=1024, ax=None):
     ax.set_xlabel("Weights' indices")
     ax.set_ylabel("Weights")
     if show_needed:
-        fig.show()
+        plt.show()
 
 
 def plot_wav_with_offset(idx, wav, offset, total_length, ax=None):
@@ -113,7 +113,7 @@ def plot_windowing(waveform, windowing_class=Windowing, n_subpictures=4):
         ax.set_ylim(*ylim)
         ax.grid()
 
-    fig.show()
+    plt.show()
 
 
 def get_demo_tensor(waveforms):
@@ -181,7 +181,7 @@ def plot_hann(demo_tensor, hann_class=Hann):
                 ax.set_title(name)
         line[0].set_ylabel(line_names[idx])
 
-    fig.show()
+    plt.show()
 
 
 def plot_mel_scale():
@@ -194,7 +194,7 @@ def plot_mel_scale():
     ax.set_ylabel("Mel frequencies")
     ax.set_title("Mel weights")
 
-    fig.show()
+    plt.show()
 
 
 def plot_fft_difference():
@@ -256,7 +256,7 @@ def plot_fft_difference():
                 ax.set_title(name)
 
     fig.tight_layout()
-    fig.show()
+    plt.show()
 
 
 def plot_spec(spec, ax=None, spec_type="spec", title=None, colorbar=True, **kwargs):
@@ -277,7 +277,7 @@ def plot_spec(spec, ax=None, spec_type="spec", title=None, colorbar=True, **kwar
         ax.set_title(title)
 
     if show_needed:
-        fig.show()
+        plt.show()
 
 
 def plot_spec_mel(spec, mel):
@@ -289,7 +289,7 @@ def plot_spec_mel(spec, mel):
     plot_spec(mel, ax=ax1, spec_type="mel", title="Mel", colorbar=False)
 
     fig.tight_layout()
-    fig.show()
+    plt.show()
 
 
 def plot_transformed_mels(mel, transformed_mel):
@@ -304,7 +304,7 @@ def plot_transformed_mels(mel, transformed_mel):
     plot_spec(transformed_mel, ax=ax1, spec_type="mel", title="Mel spectrogram", vmin=0., vmax=max_value)
 
     # fig.tight_layout()
-    fig.show()
+    plt.show()
 
 
 def plot_restored_spec(spec, restored_spec):
@@ -317,7 +317,7 @@ def plot_restored_spec(spec, restored_spec):
     plot_spec(np.abs(spec - restored_spec), ax=ax2, spec_type="spec", title="Difference", vmin=0., vmax=max_value)
 
     fig.tight_layout()
-    fig.show()
+    plt.show()
 
 
 def plot_wav_and_mel(wav_dict, sample_rate=22050, wav2mel=None):
